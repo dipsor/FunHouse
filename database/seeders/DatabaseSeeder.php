@@ -36,6 +36,9 @@ class DatabaseSeeder extends Seeder
         $rota = Rota::factory()->create(['week_commence_date' => $weekCommenceDate]);
         $shop->rotas()->save($rota);
 
+        // 5|----------------|20
+        // 5|-------|11
+        //           14|-----|20
         Shift::factory()->create([
             'rota_id' => $rota->id,
             'staff_id' => $staff1->id,
@@ -47,89 +50,96 @@ class DatabaseSeeder extends Seeder
             'rota_id' => $rota->id,
             'staff_id' => $staff2->id,
             'start_time' => $this->generateDate($weekCommenceDate, 0, 5),
-            'end_time' => $this->generateDate($weekCommenceDate, 0, 10),
+            'end_time' => $this->generateDate($weekCommenceDate, 0, 11),
         ]);
 
         Shift::factory()->create([
             'rota_id' => $rota->id,
             'staff_id' => $staff3->id,
-            'start_time' => $this->generateDate($weekCommenceDate, 0, 15),
+            'start_time' => $this->generateDate($weekCommenceDate, 0, 14),
             'end_time' => $this->generateDate($weekCommenceDate, 0, 20),
         ]);
 
+        // 5|---------------|20
+        // 5|------------|15
+        //          13|-----|20
+        Shift::factory()->create([
+            'rota_id' => $rota->id,
+            'staff_id' => $staff1->id,
+            'start_time' => $this->generateDate($weekCommenceDate, 1, 5),
+            'end_time' => $this->generateDate($weekCommenceDate, 1, 20),
+        ]);
+
+        Shift::factory()->create([
+            'rota_id' => $rota->id,
+            'staff_id' => $staff2->id,
+            'start_time' => $this->generateDate($weekCommenceDate, 1, 5),
+            'end_time' => $this->generateDate($weekCommenceDate, 1, 15),
+        ]);
+
+        Shift::factory()->create([
+            'rota_id' => $rota->id,
+            'staff_id' => $staff3->id,
+            'start_time' => $this->generateDate($weekCommenceDate, 1, 13),
+            'end_time' => $this->generateDate($weekCommenceDate, 1, 20),
+        ]);
+
+        // 13|-------|20
+        Shift::factory()->create([
+            'rota_id' => $rota->id,
+            'staff_id' => $staff4->id,
+            'start_time' => $this->generateDate($weekCommenceDate, 2, 13),
+            'end_time' => $this->generateDate($weekCommenceDate, 2, 20),
+        ]);
+
+        // 5|----------|15
+        //      12|--------|20
+        Shift::factory()->create([
+            'rota_id' => $rota->id,
+            'staff_id' => $staff3->id,
+            'start_time' => $this->generateDate($weekCommenceDate, 3, 5),
+            'end_time' => $this->generateDate($weekCommenceDate, 3, 15),
+        ]);
+
+        Shift::factory()->create([
+            'rota_id' => $rota->id,
+            'staff_id' => $staff4->id,
+            'start_time' => $this->generateDate($weekCommenceDate, 3, 12),
+            'end_time' => $this->generateDate($weekCommenceDate, 3, 20),
+        ]);
 
 
-//        Shift::factory()->create([
-//            'rota_id' => $rota->id,
-//            'staff_id' => $staff1->id,
-//            'start_time' => $this->generateDate($weekCommenceDate, 1, 8),
-//            'end_time' => $this->generateDate($weekCommenceDate, 1, 18),
-//        ]);
-//
-//        Shift::factory()->create([
-//            'rota_id' => $rota->id,
-//            'staff_id' => $staff2->id,
-//            'start_time' => $this->generateDate($weekCommenceDate, 1, 18),
-//            'end_time' => $this->generateDate($weekCommenceDate, 1, 23),
-//        ]);
-//
-//        Shift::factory()->create([
-//            'rota_id' => $rota->id,
-//            'staff_id' => $staff3->id,
-//            'start_time' => $this->generateDate($weekCommenceDate, 2, 5),
-//            'end_time' => $this->generateDate($weekCommenceDate, 2, 15),
-//        ]);
-//
-//        Shift::factory()->create([
-//            'rota_id' => $rota->id,
-//            'staff_id' => $staff4->id,
-//            'start_time' => $this->generateDate($weekCommenceDate, 2, 10),
-//            'end_time' => $this->generateDate($weekCommenceDate, 2, 20),
-//        ]);
-//
-//        Shift::factory()->create([
-//            'rota_id' => $rota->id,
-//            'staff_id' => $staff2->id,
-//            'start_time' => $this->generateDate($weekCommenceDate, 3, 5),
-//            'end_time' => $this->generateDate($weekCommenceDate, 3, 20),
-//        ]);
-//
-//        Shift::factory()->create([
-//            'rota_id' => $rota->id,
-//            'staff_id' => $staff4->id,
-//            'start_time' => $this->generateDate($weekCommenceDate, 3, 10),
-//            'end_time' => $this->generateDate($weekCommenceDate, 3, 17),
-//        ]);
-//
-//
-//
-//        Shift::factory()->create([
-//            'rota_id' => $rota->id,
-//            'staff_id' => $staff1->id,
-//            'start_time' => $this->generateDate($weekCommenceDate, 4, 5),
-//            'end_time' => $this->generateDate($weekCommenceDate, 4, 15),
-//        ]);
-//
-//        Shift::factory()->create([
-//            'rota_id' => $rota->id,
-//            'staff_id' => $staff2->id,
-//            'start_time' => $this->generateDate($weekCommenceDate, 4, 7),
-//            'end_time' => $this->generateDate($weekCommenceDate, 4, 16),
-//        ]);
-//
-//        Shift::factory()->create([
-//            'rota_id' => $rota->id,
-//            'staff_id' => $staff3->id,
-//            'start_time' => $this->generateDate($weekCommenceDate, 4, 6),
-//            'end_time' => $this->generateDate($weekCommenceDate, 4, 20),
-//        ]);
-//
-//        Shift::factory()->create([
-//            'rota_id' => $rota->id,
-//            'staff_id' => $staff4->id,
-//            'start_time' => $this->generateDate($weekCommenceDate, 4, 8),
-//            'end_time' => $this->generateDate($weekCommenceDate, 4, 12),
-//        ]);
+        // |----------|
+        //   |---------|
+        //  |--------------|
+        //    |----|
+        Shift::factory()->create([
+            'rota_id' => $rota->id,
+            'staff_id' => $staff1->id,
+            'start_time' => $this->generateDate($weekCommenceDate, 4, 5),
+            'end_time' => $this->generateDate($weekCommenceDate, 4, 15),
+        ]);
+
+        Shift::factory()->create([
+            'rota_id' => $rota->id,
+            'staff_id' => $staff2->id,
+            'start_time' => $this->generateDate($weekCommenceDate, 4, 7),
+            'end_time' => $this->generateDate($weekCommenceDate, 4, 16),
+        ]);
+
+        Shift::factory()->create([
+            'rota_id' => $rota->id,
+            'staff_id' => $staff3->id,
+            'start_time' => $this->generateDate($weekCommenceDate, 4, 6),
+            'end_time' => $this->generateDate($weekCommenceDate, 4, 20),
+        ]);
+
+        Shift::factory()->create([
+            'rota_id' => $rota->id,
+            'staff_id' => $staff4->id,
+            'start_time' => $this->generateDate($weekCommenceDate, 4, 8),
+            'end_time' => $this->generateDate($weekCommenceDate, 4, 12),
+        ]);
     }
 
     /**

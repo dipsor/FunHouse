@@ -29,4 +29,15 @@ use Illuminate\Database\Eloquent\Model;
 class Staff extends Model
 {
     use HasFactory;
+
+    public static $manningDays = [];
+
+    public function getFullNameAttribute()
+    {
+        if ($this->surname) {
+            return $this->first_name . ' ' . $this->surname;
+        }
+
+        return $this->first_name;
+    }
 }

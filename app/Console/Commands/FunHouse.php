@@ -51,7 +51,10 @@ class FunHouse extends Command
     {
         $shop = Shop::with('staff', 'rotas.shifts')->get()->first();
 
-        $this->manningResolver->resolve($shop->rotas->first());
+        $dto = $this->manningResolver->resolve($shop->rotas->first());
 
+        dd($dto);
+
+        $this->info("Finished");
     } // time spent so far, 0.5h
 }
