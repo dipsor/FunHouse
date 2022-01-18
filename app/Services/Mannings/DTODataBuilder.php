@@ -36,14 +36,14 @@ class DTODataBuilder
 
 
         return new SingleManning([
-            'monday' => $manningData->getByDayKey(ManningData::MONDAY, 'count'),
-            'tuesday' => $manningData->getByDayKey(ManningData::TUESDAY, 'count'),
-            'wednesday' => $manningData->getByDayKey(ManningData::WEDNESDAY, 'count'),
-            'thursday' => $manningData->getByDayKey(ManningData::THURSDAY, 'count'),
-            'friday' => $manningData->getByDayKey(ManningData::FRIDAY, 'count'),
-            'saturday' => $manningData->getByDayKey(ManningData::SATURDAY, 'count'),
-            'sunday' => $manningData->getByDayKey(ManningData::SUNDAY, 'count'),
-            'wholeWeek' => [],
+            'monday' => $manningData->getByDayKey(ManningData::MONDAY, 'count') * 60,
+            'tuesday' => $manningData->getByDayKey(ManningData::TUESDAY, 'count') * 60,
+            'wednesday' => $manningData->getByDayKey(ManningData::WEDNESDAY, 'count') * 60,
+            'thursday' => $manningData->getByDayKey(ManningData::THURSDAY, 'count') * 60,
+            'friday' => $manningData->getByDayKey(ManningData::FRIDAY, 'count') * 60,
+            'saturday' => $manningData->getByDayKey(ManningData::SATURDAY, 'count') * 60,
+            'sunday' => $manningData->getByDayKey(ManningData::SUNDAY, 'count') * 60,
+            'wholeWeek' => $manningData->getFullWeek(),
             'weekCommenceDate' => $this->week_commence_date
         ]);
     }
