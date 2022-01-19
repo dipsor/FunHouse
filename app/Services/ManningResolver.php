@@ -24,6 +24,12 @@ class ManningResolver
         $this->allocator = $allocator;
     }
 
+    /**
+     * @param  Rota  $rota
+     *
+     * @return SingleManning
+     * @throws \Spatie\DataTransferObject\Exceptions\UnknownProperties
+     */
     public function resolve(Rota $rota): SingleManning
     {
         $allocatedManningsArray = $this->allocator->get($rota);

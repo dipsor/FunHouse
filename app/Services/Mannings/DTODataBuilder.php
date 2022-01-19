@@ -2,9 +2,6 @@
 
 namespace App\Services\Mannings;
 
-use App\Models\Rota;
-use Spatie\DataTransferObject\DataTransferObject;
-
 class DTODataBuilder
 {
     /**
@@ -33,7 +30,6 @@ class DTODataBuilder
     public function getDTO(): SingleManning
     {
         $manningData = new ManningData($this->mannigsArray);
-
 
         return new SingleManning([
             'monday' => $manningData->getByDayKey(ManningData::MONDAY, 'count') * 60,

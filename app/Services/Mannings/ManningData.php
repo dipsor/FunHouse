@@ -24,13 +24,11 @@ class ManningData
         'wholeWeek' => self::WHOLE_WEEK,
     ];
 
-
     /**
      * @var array
      */
     private array $days = [];
-    private array $mannigsArray = [];
-    private array $fullWeek = [];
+    private array $mannigsArray;
 
     /**
      * ManningData constructor.
@@ -44,7 +42,10 @@ class ManningData
         $this->setData();
     }
 
-    private function setData()
+    /**
+     *  setData builds structure for DTO
+     */
+    private function setData(): void
     {
         foreach ($this->mannigsArray as $key => $item) {
             $day = strtolower(explode('--', $key)[0]);
@@ -66,9 +67,7 @@ class ManningData
             $this->days[$dayKey]['meta']['staff'][$name] = [
                 'manning_minutes' => count($item) * 60,
             ];
-
         }
-
 
         foreach ($this->days as $key => $day) {
             $this->days[$key]['count'] = count($this->days[$key]['items']);
@@ -76,6 +75,12 @@ class ManningData
         }
     }
 
+    /**
+     * @param  string  $day
+     * @param  string  $key
+     *
+     * @return int
+     */
     public function getByDayKey(string $day, string $key): int
     {
         if (isset($this->days[$day]) && isset($this->days[$day][$key])) {
@@ -85,7 +90,10 @@ class ManningData
         return 0;
     }
 
-    public function getFullWeek()
+    /**
+     * @return array
+     */
+    public function getFullWeek(): array
     {
         $collection = collect($this->days);
 
