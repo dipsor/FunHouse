@@ -53,5 +53,5 @@ class FunHouse extends Command
         dump($dto);
 
         $this->info("Finished");
-    } // time spent so far, 0.5h
+    }
 }
