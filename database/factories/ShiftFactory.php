@@ -18,8 +18,8 @@ class ShiftFactory extends Factory
         return [
             'rota_id' => 1,
             'staff_id' => 1,
-            'start_time' => $this->faker->name,
-            'end_time' => $this->faker->name,
+            'start_time' => now()->addHour(),
+            'end_time' => now()->addHours(8),
         ];
     }
 }

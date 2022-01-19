@@ -142,19 +142,4 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 
-    /**
-     * @param  Carbon  $startDate
-     * @param  int  $days
-     * @param  int  $hours
-     *
-     * @return Carbon
-     */
-    private function generateDate(Carbon $startDate, int $days = 0, int $hours = 0): Carbon
-    {
-        if (!$days && !$hours) {
-            return new Carbon($startDate);
-        }
-
-        return (new Carbon($startDate))->addDays($days)->addHours($hours);
-    }
 }

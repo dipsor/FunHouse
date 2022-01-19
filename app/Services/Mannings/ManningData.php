@@ -63,8 +63,7 @@ class ManningData
 
             $this->days[$dayKey]['items'] = array_merge($this->days[$dayKey]['items'], $item);
             $this->days[$dayKey]['count'] = 0;
-            $this->days[$dayKey]['meta']['staff'][] = [
-                'name' => $name,
+            $this->days[$dayKey]['meta']['staff'][$name] = [
                 'manning_minutes' => count($item) * 60,
             ];
 

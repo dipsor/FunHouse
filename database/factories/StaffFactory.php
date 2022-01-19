@@ -16,9 +16,11 @@ class StaffFactory extends Factory
      */
     public function definition()
     {
+        $firstName = $this->faker->firstName;
+        $lastName = $this->faker->lastName;
         return [
-            'first_name' => $this->faker->firstName,
-            'surname' => $this->faker->lastName,
+            'first_name' => $firstName,
+            'surname' => $lastName,
             'shop_id' => 1
         ];
     }
