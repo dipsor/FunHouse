@@ -4,7 +4,8 @@
     - I spent roughly 9 hours on the task. I was working through one solution which did not work
       so I decided to rework it a bit.
     - If I had more time, I would try to refactor the code better, also I would add some tools to test code quality
-      such as: phpinsights, phpstan, PHP_CodeSniffer, phpmd
+      such as: phpinsights, phpstan, PHP_CodeSniffer, phpmd. Also i would try to find
+      if i can reduce the complexity.
 
 ### 2. Why did you choose PHP as your main programming language?
     - when I was younger I found quite fascinating to be able to create websites and as PHP was the most popular
