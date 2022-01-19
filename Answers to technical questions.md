@@ -1,7 +1,7 @@
 ## Technical Questions
 
 ### 1. How long did you spend on the coding test? What would you add to your solution if you had more time?
-    - I spent roughly 9 hours on the task. I was working through one solution which did not work
+    - I spent roughly 7 hours on the task. I was working through one solution which did not work
       so I decided to rework it a bit.
     - If I had more time, I would try to refactor the code better, also I would add some tools to test code quality
       such as: phpinsights, phpstan, PHP_CodeSniffer, phpmd. Also i would try to find
